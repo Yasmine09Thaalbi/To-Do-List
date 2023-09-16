@@ -17,4 +17,9 @@ export class TodolistComponent {
 
   }
 
+  onDelete(index: number){
+    this.taskArray.splice(index , 1); 
+    // array.splice(index, count) removes count elements starting from the index.
+  }
+
 }
