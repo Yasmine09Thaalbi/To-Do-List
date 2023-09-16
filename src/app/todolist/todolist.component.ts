@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-todolist',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./todolist.component.css']
 })
 export class TodolistComponent {
+  taskArray=[{taskName: 'Brush teeth' , isCompleted: false }]
+
+  onSubmit(form: NgForm){
+    this.taskArray.push({
+      taskName: form.controls['task'].value ,
+      isCompleted: false
+    })
+
+  }
 
 }
