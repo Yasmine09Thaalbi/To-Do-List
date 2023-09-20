@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -6,14 +6,22 @@ import { NgForm } from '@angular/forms';
   templateUrl: './todolist.component.html',
   styleUrls: ['./todolist.component.css']
 })
-export class TodolistComponent {
-  taskArray=[{taskName: 'Brush teeth' , isCompleted: false }]
+export class TodolistComponent  implements OnInit {
+  taskArray=[{taskName: 'Brush teeth' , isCompleted: false }];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
   onSubmit(form: NgForm){
     this.taskArray.push({
       taskName: form.controls['task'].value ,
       isCompleted: false
     })
+
+    form.reset();
+
 
   }
 
