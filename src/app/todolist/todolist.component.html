@@ -26,7 +26,7 @@
       <tbody>
         <tr *ngFor="let t of taskArray; index as i "> <!--(index as i) it means that you want to assign the index of the current iteration to a local variable i -->
           <td>{{t.taskName}}</td>
-          <td><input id="myCheckbox" type="checkbox" ></td>
+          <td><input (change)="onCheck(i)" id="myCheckbox" type="checkbox" ></td>
           <td><button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button></td>
         </tr>
       </tbody>

@@ -30,4 +30,10 @@ export class TodolistComponent  implements OnInit {
     // array.splice(index, count) removes count elements starting from the index.
   }
 
+  onCheck(index: number){
+    console.log(this.taskArray);
+
+    this.taskArray[index].isCompleted = !this.taskArray[index].isCompleted  ; 
+  }
+
 }
